@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #a3a6ff;
+  --color-surface-tint: #a3a6ff;
+  --color-surface-container: #1a1919;
+  --color-error-dim: #d73357;
+  --color-primary-fixed-dim: #8387ff;
+  --color-surface-container-low: #131313;
+  --color-inverse-primary: #494bd7;
+  --color-on-secondary-container: #d4c9ff;
+  --color-outline: #777575;
+  --color-inverse-surface: #fcf8f8;
+  --color-on-surface-variant: #adaaaa;
+  --color-tertiary-dim: #ef81c4;
+  --color-surface-dim: #0e0e0e;
+  --color-on-secondary: #21006d;
+  --color-on-primary-fixed-variant: #0e009d;
+  --color-secondary-fixed: #d6cbff;
+  --color-tertiary-fixed: #ff8ed2;
+  --color-on-secondary-fixed: #361c89;
+  --color-secondary-fixed-dim: #c8bbff;
+  --color-on-background: #ffffff;
+  --color-outline-variant: #494847;
+  --color-on-tertiary-fixed: #3b002b;
+  --color-surface-variant: #262626;
+  --color-primary-container: #9396ff;
+  --color-background: #0e0e0e;
+  --color-on-tertiary: #701455;
+  --color-on-primary: #0f00a4;
+  --color-on-primary-fixed: #000000;
+  --color-on-error: #490013;
+  --color-surface: #0e0e0e;
+  --color-primary-fixed: #9396ff;
+  --color-surface-container-highest: #262626;
+  --color-secondary-container: #49339d;
+  --color-surface-container-high: #201f1f;
+  --color-surface-container-lowest: #000000;
+  --color-tertiary-container: #ff8ed2;
+  --color-on-tertiary-container: #63054a;
+  --color-secondary: #a28efc;
+  --color-on-secondary-fixed-variant: #533ea7;
+  --color-tertiary-fixed-dim: #ef81c4;
+  --color-on-tertiary-fixed-variant: #6e1354;
+  --color-on-primary-container: #0a0081;
+  --color-tertiary: #ffa5d9;
+  --color-primary-dim: #6063ee;
+  --color-secondary-dim: #a28efc;
+  --color-surface-bright: #2c2c2c;
+  --color-inverse-on-surface: #565554;
+  --color-on-surface: #ffffff;
+  --color-error-container: #a70138;
+  --color-on-error-container: #ffb2b9;
+  --color-error: #ff6e84;
+
+  --font-headline: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Geist Mono", monospace;
+}
+
+@utility ghost-border {
+  border: 0.5px solid rgba(73, 72, 71, 0.2);
+}
+
+@utility terminal-glow {
+  text-shadow: 0 0 10px rgba(163, 166, 255, 0.4);
+}
+
+@utility glass-panel {
+  background: rgba(38, 38, 38, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+}
