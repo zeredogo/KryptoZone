@@ -70,7 +70,8 @@ CREATE POLICY "Allow public select for profiles"
 
 CREATE POLICY "Allow admin edit for profiles" 
     ON public.profiles FOR ALL 
-    USING (auth.role() = 'authenticated');
+    TO authenticated
+    USING (true);
 
 -- Create Policies for Projects
 CREATE POLICY "Allow public select for projects" 
@@ -79,7 +80,8 @@ CREATE POLICY "Allow public select for projects"
 
 CREATE POLICY "Allow admin edit for projects" 
     ON public.projects FOR ALL 
-    USING (auth.role() = 'authenticated');
+    TO authenticated
+    USING (true);
 
 -- Create Policies for Market Oracle
 CREATE POLICY "Allow public select for market_oracle" 
@@ -88,7 +90,8 @@ CREATE POLICY "Allow public select for market_oracle"
 
 CREATE POLICY "Allow admin edit for market_oracle" 
     ON public.market_oracle FOR ALL 
-    USING (auth.role() = 'authenticated');
+    TO authenticated
+    USING (true);
 
 -- Create Policies for Intel Feeds
 CREATE POLICY "Allow public select for intel_feeds" 
@@ -97,7 +100,8 @@ CREATE POLICY "Allow public select for intel_feeds"
 
 CREATE POLICY "Allow admin edit for intel_feeds" 
     ON public.intel_feeds FOR ALL 
-    USING (auth.role() = 'authenticated');
+    TO authenticated
+    USING (true);
 
 -- ==========================================
 -- SEED INITIAL DATA (Matches the Stitch mockup)
