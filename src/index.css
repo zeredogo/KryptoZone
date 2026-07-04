@@ -58,8 +58,44 @@
   --font-label: "Geist Mono", monospace;
 }
 
+/* ─── Light Mode Overrides (when .dark is removed from <html>) ─── */
+html:not(.dark) {
+  --color-background: #f0f2ff;
+  --color-surface: #f0f2ff;
+  --color-surface-dim: #e0e4f8;
+  --color-surface-container: #ffffff;
+  --color-surface-container-low: #f5f6ff;
+  --color-surface-container-high: #e8eaf6;
+  --color-surface-container-highest: #dde0f0;
+  --color-surface-bright: #ffffff;
+  --color-surface-variant: #e8eaf6;
+  --color-on-background: #1a1a2e;
+  --color-on-surface: #1a1a2e;
+  --color-on-surface-variant: #444466;
+  --color-outline: #6666aa;
+  --color-outline-variant: #b0b0cc;
+  --color-inverse-surface: #1a1a2e;
+  --color-primary: #4040cc;
+  --color-primary-fixed-dim: #3333bb;
+  --color-primary-dim: #5555dd;
+  --color-error: #cc2244;
+  --color-error-dim: #aa1133;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f0f2ff;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #b0b0cc;
+}
+
 @utility ghost-border {
   border: 0.5px solid rgba(73, 72, 71, 0.2);
+}
+
+html:not(.dark) .ghost-border {
+  border: 0.5px solid rgba(150, 150, 200, 0.35);
 }
 
 @utility terminal-glow {
@@ -71,6 +107,11 @@
   backdrop-filter: blur(20px);
 }
 
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+}
+
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -79,4 +120,13 @@
 }
 ::-webkit-scrollbar-thumb {
   background: #262626;
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
 }
