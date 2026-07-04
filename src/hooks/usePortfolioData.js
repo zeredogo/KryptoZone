@@ -7,7 +7,7 @@ const INITIAL_MOCK_PROFILE = {
   role: 'CORE ARCHITECT',
   credentials: 'B.Sc. Biz Mgmt',
   expertise: 'Blockchain Tech',
-  avatar_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCm8KDSvtmq65BKRG64kus0JQ1JkRwUlG6S8anrRe0pwtmW3HZTGGApAPZkgdKUkU5BjvC71hGYTaddxuyT7QZeV9GmkQeQjVLy0YH0KeNMysfgrAiEWMWALUIpJHUAbrGPUkBbALwh3v2Ih_lfSdJY5_bMrtBKx7S_kXMjjaCEYKa5_bpZzFRFwuAKy21TJxmn9XG9f1cv9RquD7KDpyuggbAofKVW9MTg6Yf4YlzmmQm05tEyRAX1HKaIZTqoTuOP9fv4ooQ4puU',
+  avatar_url: '/paul_sunday_dogo.jpg',
   bio: 'Former Instructor. Transitioning theoretical logic into scalable decentralized ecosystems.'
 }
 
