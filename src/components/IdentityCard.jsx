@@ -19,7 +19,7 @@ export default function IdentityCard({ profile, loading }) {
         <div className="relative overflow-hidden rounded-t-xl h-64 md:h-72">
           <img 
             alt={profile.name} 
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+            className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" 
             src={profile.avatar_url}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
