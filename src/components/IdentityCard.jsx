@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function IdentityCard({ profile, loading }) {
+export default function IdentityCard({ profile, loading, onViewAbout }) {
   if (loading || !profile) {
     return (
       <div className="col-span-12 lg:col-span-4 bg-surface-container p-6 rounded-xl ghost-border flex flex-col justify-center items-center h-[550px] animate-pulse">
@@ -43,10 +43,17 @@ export default function IdentityCard({ profile, loading }) {
             </div>
           </div>
           
-          <div className="pt-6 border-t border-white/5">
+          <div className="pt-6 border-t border-white/5 space-y-4">
             <p className="text-sm text-on-surface-variant leading-relaxed italic">
               "{profile.bio}"
             </p>
+            <button
+              onClick={onViewAbout}
+              className="w-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 hover:border-primary/40 py-2.5 rounded-lg font-label text-xs uppercase tracking-widest transition-all active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm">visibility</span>
+              View Full Details
+            </button>
           </div>
         </div>
       </div>
