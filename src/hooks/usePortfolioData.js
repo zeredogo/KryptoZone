@@ -155,31 +155,65 @@ export const usePortfolioData = () => {
     }
   }
 
-  // Effect to load initial data
+  // Fetch live prices from CoinGecko API
+  const fetchLivePrices = async () => {
+    try {
+      const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true')
+      if (!res.ok) throw new Error('Failed to fetch CoinGecko prices')
+      const json = await res.json()
+
+      const mapping = {
+        BTC: { id: 'bitcoin', height: 100 },
+        ETH: { id: 'ethereum', height: 85 },
+        BNB: { id: 'binancecoin', height: 70 },
+        SOL: { id: 'solana', height: 55 },
+        XRP: { id: 'ripple', height: 40 }
+      }
+
+      const updatedOracle = Object.entries(mapping).map(([symbol, cfg]) => {
+        const coinData = json[cfg.id]
+        const price = coinData ? coinData.usd : 0
+        const change = coinData ? parseFloat(coinData.usd_24h_change.toFixed(2)) : 0
+        return {
+          symbol,
+          price: price || (INITIAL_MOCK_ORACLE.find(o => o.symbol === symbol)?.price || 0),
+          change_pct: coinData ? change : (INITIAL_MOCK_ORACLE.find(o => o.symbol === symbol)?.change_pct || 0),
+          height_pct: cfg.height
+        }
+      })
+      setOracleData(updatedOracle)
+    } catch (err) {
+      console.warn('Live price fetch failed, defaulting to database stats:', err)
+      // Fallback is already loaded via fetchData()
+    }
+  }
+
+  // Effect to load initial data and sync live price ticker
   useEffect(() => {
     fetchData()
+    fetchLivePrices()
 
-    // Setup real-time updates for market oracle when not in mock mode
+    // Poll live prices every 30 seconds
+    const priceInterval = setInterval(fetchLivePrices, 30000)
+
+    // Setup real-time updates for other tables when not in mock mode
+    let channel = null
     if (!isMockMode) {
-      const channel = supabase
+      channel = supabase
         .channel('schema-db-changes')
         .on(
           'postgres_changes',
           { event: '*', schema: 'public', table: 'market_oracle' },
           () => {
-            // Refetch oracle data when changed
-            supabase
-              .from('market_oracle')
-              .select('*')
-              .order('price', { ascending: false })
-              .then(({ data }) => {
-                if (data) setOracleData(data)
-              })
+            fetchLivePrices()
           }
         )
         .subscribe()
+    }
 
-      return () => {
+    return () => {
+      clearInterval(priceInterval)
+      if (channel) {
         supabase.removeChannel(channel)
       }
     }
