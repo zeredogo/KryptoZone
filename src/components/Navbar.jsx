@@ -36,6 +36,16 @@ export default function Navbar({ currentTab, setCurrentTab, onOpenLogin }) {
             >
               Home
             </button>
+            <button 
+              onClick={() => setCurrentTab('about')}
+              className={`font-headline tracking-tight text-sm font-bold transition-all px-2 py-1 rounded cursor-pointer ${
+                currentTab === 'about' 
+                  ? 'text-indigo-400 border-b-2 border-indigo-500 pb-1' 
+                  : 'text-neutral-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              About
+            </button>
             {user && (
               <button 
                 onClick={() => setCurrentTab('admin')}
@@ -67,36 +77,13 @@ export default function Navbar({ currentTab, setCurrentTab, onOpenLogin }) {
               {darkMode ? 'light_mode' : 'dark_mode'}
             </button>
             
-            {user ? (
-              <>
-                <button 
-                  onClick={() => setCurrentTab(currentTab === 'admin' ? 'home' : 'admin')}
-                  className="bg-surface-variant text-neutral-400 px-4 py-1.5 font-label text-xs uppercase tracking-widest hover:text-white transition-all active:scale-95 cursor-pointer"
-                >
-                  {currentTab === 'admin' ? 'View Site' : 'Admin'}
-                </button>
-                <button 
-                  onClick={logout}
-                  className="bg-gradient-to-br from-error to-error-dim text-white px-4 py-1.5 font-label text-xs uppercase tracking-widest font-bold active:scale-95 transition-transform cursor-pointer"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <button 
-                  onClick={onOpenLogin}
-                  className="bg-surface-variant text-neutral-400 px-4 py-1.5 font-label text-xs uppercase tracking-widest hover:text-white transition-all active:scale-95 cursor-pointer"
-                >
-                  Admin Login
-                </button>
-                <button 
-                  onClick={onOpenLogin}
-                  className="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-4 py-1.5 font-label text-xs uppercase tracking-widest font-bold active:scale-95 transition-transform cursor-pointer"
-                >
-                  Login
-                </button>
-              </>
+            {user && (
+              <button 
+                onClick={logout}
+                className="bg-gradient-to-br from-error to-error-dim text-white px-4 py-1.5 font-label text-xs uppercase tracking-widest font-bold active:scale-95 transition-transform cursor-pointer"
+              >
+                Logout
+              </button>
             )}
           </div>
         </div>
