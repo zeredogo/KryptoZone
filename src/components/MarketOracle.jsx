@@ -39,26 +39,45 @@ export default function MarketOracle({ oracleData, loading }) {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-end h-auto md:h-64 mt-16 md:mt-0">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center h-auto mt-16 md:mt-0">
         {oracleData.map((asset) => {
           const isPositive = asset.change_pct >= 0
+          // Mapping symbols to coin names for the logo URL
+          const getLogoUrl = (symbol) => {
+            const map = {
+              'BTC': 'bitcoin-btc',
+              'ETH': 'ethereum-eth',
+              'SOL': 'solana-sol',
+              'BNB': 'bnb-bnb',
+              'XRP': 'xrp-xrp'
+            }
+            const mapped = map[symbol.toUpperCase()] || `${symbol.toLowerCase()}-${symbol.toLowerCase()}`
+            return `https://cryptologos.cc/logos/${mapped}-logo.png`
+          }
+
           return (
-            <div key={asset.symbol} className="flex flex-col gap-4 group cursor-pointer">
-              <div className="flex-1 flex flex-col justify-end h-32 md:h-full relative">
-                <div 
-                  className="bg-primary/20 hover:bg-primary/40 transition-all duration-300 rounded-t-lg relative w-full" 
-                  style={{ height: `${asset.height_pct}%`, minHeight: '30px' }}
-                >
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 font-label text-xs text-primary whitespace-nowrap font-bold">
-                    {formatPrice(asset.price)}
-                  </div>
-                </div>
+            <div key={asset.symbol} className="flex flex-col items-center gap-4 group cursor-pointer p-4 bg-surface-variant/10 rounded-xl hover:bg-surface-variant/30 transition-colors border border-white/5 hover:border-primary/20">
+              <div className="w-16 h-16 relative">
+                <img 
+                  src={getLogoUrl(asset.symbol)} 
+                  alt={asset.symbol}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://cryptologos.cc/logos/tether-usdt-logo.png" // fallback
+                  }}
+                />
               </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-sm text-white">{asset.symbol}</p>
-                <p className={`font-label text-[10px] ${isPositive ? 'text-primary' : 'text-error'}`}>
+              
+              <div className="text-center space-y-1">
+                <p className="font-bold text-lg text-white">{asset.symbol}</p>
+                <div className="font-label text-xs text-outline">{formatPrice(asset.price)}</div>
+                <div className={`font-label text-[10px] inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 ${isPositive ? 'text-primary' : 'text-error'}`}>
+                  <span className="material-symbols-outlined text-[10px]">
+                    {isPositive ? 'trending_up' : 'trending_down'}
+                  </span>
                   {isPositive ? '+' : ''}{asset.change_pct}%
-                </p>
+                </div>
               </div>
             </div>
           )
