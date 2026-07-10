@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function RecentDeployments({ projects, loading }) {
+export default function RecentDeployments({ projects, loading, onViewAll }) {
   const [selectedProject, setSelectedProject] = useState(null)
 
   if (loading) {
@@ -28,18 +28,16 @@ export default function RecentDeployments({ projects, loading }) {
     )
   }
 
-  // Helper to parse spec array
   const parseSpecs = (specs) => {
     if (Array.isArray(specs)) return specs
     if (typeof specs === 'string') {
-      try {
-        return JSON.parse(specs)
-      } catch (e) {
-        return []
-      }
+      try { return JSON.parse(specs) } catch (e) { return [] }
     }
     return []
   }
+
+  // Only show the 4 most recent projects
+  const recentProjects = projects.slice(0, 4)
 
   return (
     <section className="space-y-10">
@@ -50,16 +48,13 @@ export default function RecentDeployments({ projects, loading }) {
             Technical blueprints and production-ready modules recently exited from the KryptoZone forge.
           </p>
         </div>
-        <div className="font-label text-xs text-primary underline underline-offset-8 cursor-pointer mt-4 md:mt-0">
-          ARCHIVE_SYSTEM_04
-        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.map((project) => {
+        {recentProjects.map((project) => {
           const specs = parseSpecs(project.specs)
           const isMainnet = project.status?.toUpperCase() === 'MAINNET'
-          
+
           return (
             <div 
               key={project.id} 
@@ -70,7 +65,7 @@ export default function RecentDeployments({ projects, loading }) {
                   <img 
                     alt={project.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                    src={project.image_url || 'https://via.placeholder.com/400x300'}
+                    src={project.image_url || 'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&auto=format&fit=crop'}
                   />
                   <div className="absolute top-4 right-4">
                     <span 
@@ -111,17 +106,40 @@ export default function RecentDeployments({ projects, loading }) {
                 </div>
               </div>
 
-              <div className="p-6 pt-0">
+              {/* Action Buttons — replaced version badge with live URL button */}
+              <div className="p-6 pt-0 flex gap-3">
                 <button 
                   onClick={() => setSelectedProject(project)}
-                  className="w-full py-2 bg-surface-variant/30 hover:bg-primary text-on-surface hover:text-on-primary transition-all font-bold text-sm rounded cursor-pointer"
+                  className="flex-1 py-2 bg-surface-variant/30 hover:bg-surface-variant/60 text-white transition-all font-bold text-sm rounded cursor-pointer"
                 >
-                  View Details
+                  Specs
                 </button>
+                <a 
+                  href={project.live_url || 'https://github.com/zeredogo/KryptoZone'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2 bg-primary text-on-primary hover:brightness-110 transition-all font-bold text-sm rounded text-center block leading-8"
+                >
+                  View Project
+                </a>
               </div>
             </div>
           )
         })}
+      </div>
+
+      {/* View All Button */}
+      <div className="flex justify-center pt-4">
+        <button
+          onClick={onViewAll}
+          className="flex items-center gap-3 px-8 py-3 bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary/40 text-white font-label text-xs uppercase tracking-widest transition-all active:scale-[0.98] cursor-pointer rounded-lg group"
+        >
+          <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform text-sm">grid_view</span>
+          View All Deployments
+          <span className="bg-primary/10 text-primary px-2 py-0.5 rounded font-bold text-[10px]">
+            {projects.length}
+          </span>
+        </button>
       </div>
 
       {/* Details Modal */}
@@ -159,9 +177,17 @@ export default function RecentDeployments({ projects, loading }) {
               </div>
 
               <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/5">
-                <div>
-                  <h5 className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">VERSION</h5>
-                  <p className="font-label text-sm text-primary font-bold">{selectedProject.version || 'v1.0.0'}</p>
+                <div className="space-y-3">
+                  <h5 className="font-label text-[10px] text-outline uppercase tracking-widest">LIVE LINK</h5>
+                  <a 
+                    href={selectedProject.live_url || 'https://github.com/zeredogo/KryptoZone'} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-primary text-on-primary px-4 py-2 font-label text-xs uppercase tracking-widest font-bold hover:brightness-110 transition-all rounded cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                    View Project
+                  </a>
                 </div>
                 <div>
                   <h5 className="font-label text-[10px] text-outline uppercase tracking-widest mb-3">BLUEPRINT COMPLEXITY</h5>
