@@ -12,6 +12,7 @@ import RecentDeployments from './components/RecentDeployments'
 import Footer from './components/Footer'
 import AboutPage from './components/AboutPage'
 import ProjectsPage from './components/ProjectsPage'
+import ContactSection from './components/ContactSection'
 
 // Admin Components
 import ControlPlane from './components/admin/ControlPlane'
@@ -210,6 +211,9 @@ function AppContent() {
           />
         </main>
       )}
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Shared Footer */}
       <Footer />
