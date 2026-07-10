@@ -11,6 +11,7 @@ import IntelAggregator from './components/IntelAggregator'
 import RecentDeployments from './components/RecentDeployments'
 import Footer from './components/Footer'
 import AboutPage from './components/AboutPage'
+import ProjectsPage from './components/ProjectsPage'
 
 // Admin Components
 import ControlPlane from './components/admin/ControlPlane'
@@ -18,14 +19,14 @@ import ControlPlane from './components/admin/ControlPlane'
 function AppContent() {
   const [currentTab, setCurrentTab] = useState('home')
   const { user, login, logout, isMockMode } = useAuth()
-  
+
   // Dedicated state for admin login on /admin route
   const [adminEmail, setAdminEmail] = useState('')
   const [adminPassword, setAdminPassword] = useState('')
   const [loginError, setLoginError] = useState('')
   const [loginLoading, setLoginLoading] = useState(false)
 
-  // Retrieve unified portfolio data queries
+  // Portfolio data
   const {
     profile,
     projects,
@@ -39,7 +40,7 @@ function AppContent() {
     updateProfile
   } = usePortfolioData()
 
-  // Routing listener to detect /admin or #/admin
+  // Routing: detect /admin path to show the hidden admin portal
   useEffect(() => {
     const handleRouting = () => {
       const isPrivileged = window.location.pathname === '/admin' || window.location.hash === '#/admin'
@@ -49,10 +50,7 @@ function AppContent() {
         setCurrentTab('home')
       }
     }
-    
-    // Check on load
     handleRouting()
-    
     window.addEventListener('popstate', handleRouting)
     window.addEventListener('hashchange', handleRouting)
     return () => {
@@ -62,23 +60,23 @@ function AppContent() {
   }, [user])
 
   const handleTabChange = (tab) => {
+    // Reset URL back to root when leaving admin path
     if (tab !== 'admin') {
-      // Revert URL to root when leaving the admin path
       if (window.location.pathname === '/admin' || window.location.hash === '#/admin') {
         window.history.pushState({}, '', '/')
       }
     }
     setCurrentTab(tab)
+    // Scroll back to top on tab change
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const handleAdminLoginSubmit = async (e) => {
     e.preventDefault()
     setLoginError('')
     setLoginLoading(true)
-
     const { error } = await login(adminEmail, adminPassword)
     setLoginLoading(false)
-
     if (error) {
       setLoginError(error.message || 'Authentication sequence failed.')
     } else {
@@ -89,17 +87,16 @@ function AppContent() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-on-background font-body">
-      {/* Top Navbar */}
-      <Navbar 
-        currentTab={currentTab} 
-        setCurrentTab={handleTabChange} 
-      />
+      {/* Navbar — always visible */}
+      <Navbar currentTab={currentTab} setCurrentTab={handleTabChange} />
 
-      {/* Dynamic Main Canvas View Router */}
+      {/* === ROUTING === */}
+
+      {/* Admin Route — hidden portal at /admin */}
       {currentTab === 'admin' ? (
         user ? (
           <div className="pt-16 flex-1 flex flex-col">
-            <ControlPlane 
+            <ControlPlane
               profile={profile}
               projects={projects}
               loading={loading}
@@ -111,7 +108,7 @@ function AppContent() {
             />
           </div>
         ) : (
-          /* Full Page Admin Login Gateway (Directory-like access only) */
+          /* Full-page Admin Login Gateway */
           <main className="pt-28 pb-20 px-8 flex-1 flex flex-col justify-center items-center">
             <div className="bg-surface-container-low max-w-sm w-full p-8 rounded-xl ghost-border glass-panel space-y-6">
               <div className="text-center space-y-1">
@@ -129,11 +126,11 @@ function AppContent() {
               <form onSubmit={handleAdminLoginSubmit} className="space-y-4">
                 <div className="space-y-1.5">
                   <label className="font-label text-[10px] text-outline uppercase tracking-widest">Operator Email</label>
-                  <input 
+                  <input
                     value={adminEmail}
                     onChange={(e) => setAdminEmail(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none" 
-                    placeholder="name@kryptozone.com" 
+                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none"
+                    placeholder="name@kryptozone.com"
                     type="email"
                     required
                   />
@@ -141,17 +138,17 @@ function AppContent() {
 
                 <div className="space-y-1.5">
                   <label className="font-label text-[10px] text-outline uppercase tracking-widest">Access Phrase</label>
-                  <input 
+                  <input
                     value={adminPassword}
                     onChange={(e) => setAdminPassword(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none" 
-                    placeholder="••••••••" 
+                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none"
+                    placeholder="••••••••"
                     type="password"
                     required
                   />
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   disabled={loginLoading}
                   className="w-full bg-gradient-to-r from-primary to-indigo-500 text-on-primary py-3 font-label text-xs uppercase tracking-widest font-bold hover:brightness-110 transition-all active:scale-[0.98] cursor-pointer disabled:opacity-50"
@@ -161,7 +158,7 @@ function AppContent() {
               </form>
 
               <div className="text-center pt-2">
-                <button 
+                <button
                   onClick={() => handleTabChange('home')}
                   className="text-[10px] font-label text-outline hover:text-white transition-colors cursor-pointer"
                 >
@@ -171,10 +168,17 @@ function AppContent() {
             </div>
           </main>
         )
+
+      /* About Page */
       ) : currentTab === 'about' ? (
         <AboutPage />
+
+      /* All Projects Page */
+      ) : currentTab === 'projects' ? (
+        <ProjectsPage projects={projects} loading={loading} />
+
+      /* Public Home View */
       ) : (
-        /* Public Home View */
         <main className="pt-24 pb-20 px-8 max-w-screen-2xl w-full mx-auto space-y-20 flex-1 flex flex-col justify-start">
           {error && (
             <div className="p-4 bg-error/10 border border-error/20 text-error font-label text-xs rounded-xl">
@@ -185,9 +189,9 @@ function AppContent() {
           {/* Hero & Identity Bento Row */}
           <section className="grid grid-cols-12 gap-6 min-h-[600px]">
             <TerminalHero />
-            <IdentityCard 
-              profile={profile} 
-              loading={loading} 
+            <IdentityCard
+              profile={profile}
+              loading={loading}
               onViewAbout={() => handleTabChange('about')}
             />
           </section>
@@ -198,8 +202,12 @@ function AppContent() {
           {/* Chain vs Neural Feeds */}
           <IntelAggregator feeds={feeds} loading={loading} />
 
-          {/* Recent Portfolio Projects */}
-          <RecentDeployments projects={projects} loading={loading} />
+          {/* Recent Portfolio Projects — 4 cards + View All button */}
+          <RecentDeployments
+            projects={projects}
+            loading={loading}
+            onViewAll={() => handleTabChange('projects')}
+          />
         </main>
       )}
 
