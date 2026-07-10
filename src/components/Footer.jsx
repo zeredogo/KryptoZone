@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-950 w-full py-12 px-8 mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-2xl mx-auto">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
           <div className="text-neutral-500 font-label text-xs uppercase tracking-widest">
-            © {new Date().getFullYear()} KryptoZone v2.0. System Status: 
+            © {new Date().getFullYear()} KryptoZone. System Status: 
           </div>
           <div className="flex items-center gap-1.5 px-2 py-0.5 bg-primary/5 rounded border border-primary/10">
             <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
