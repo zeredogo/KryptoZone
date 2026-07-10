@@ -31,17 +31,12 @@ export default function Navbar({ currentTab, setCurrentTab }) {
     <nav className="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
       <div className="relative flex items-center px-6 h-16 w-full max-w-screen-2xl mx-auto">
 
-        {/* Left — Logo image */}
+        {/* Left — Brand */}
         <div
-          className="flex-shrink-0 cursor-pointer flex items-center"
+          className="text-xl font-black tracking-tighter text-indigo-400 font-label cursor-pointer flex-shrink-0"
           onClick={() => handleNav('home')}
         >
-          <img
-            src="/kryptozone_logo.png"
-            alt="KryptoZone"
-            className="h-9 w-auto object-contain"
-            style={{ maxWidth: '180px' }}
-          />
+          KryptoZone
         </div>
 
         {/* Center — Nav links absolutely centered on desktop */}
