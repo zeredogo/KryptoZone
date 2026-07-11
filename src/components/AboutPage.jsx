@@ -40,7 +40,7 @@ export default function AboutPage() {
     <main className="pt-24 pb-20 px-8 max-w-screen-2xl w-full mx-auto space-y-12">
       {/* Page Header */}
       <div className="border-b border-white/5 pb-6">
-        <h1 className="text-4xl font-black font-headline dark:text-white text-neutral-900">System Profile</h1>
+        <h1 className="text-4xl font-black font-headline text-white">System Profile</h1>
         <p className="font-label text-xs text-primary uppercase tracking-widest mt-1">
           Identity Verification // Core Architect Info
         </p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
           
           <div>
-            <h2 className="text-2xl font-black font-headline dark:text-white text-neutral-900">Paul Sunday Dogo</h2>
+            <h2 className="text-2xl font-black font-headline text-white">Paul Sunday Dogo</h2>
             <p className="font-label text-xs text-primary uppercase tracking-widest mt-1">Core Architect</p>
           </div>
 
@@ -73,19 +73,19 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Location</span>
-              <span className="dark:text-white text-neutral-900 font-label">Nigeria</span>
+              <span className="text-white font-label">Nigeria</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Degree</span>
-              <span className="dark:text-white text-neutral-900 font-label">B.Sc Business Management</span>
+              <span className="text-white font-label">B.Sc Business Management</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Diploma</span>
-              <span className="dark:text-white text-neutral-900 font-label">Computer Application</span>
+              <span className="text-white font-label">Computer Application</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Certificate</span>
-              <span className="dark:text-white text-neutral-900 font-label">Introduction to Cybersecurity</span>
+              <span className="text-white font-label">Introduction to Cybersecurity</span>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                   
                   <div className="space-y-1">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                      <h4 className="text-base font-bold dark:text-white text-neutral-900 group-hover:text-primary transition-colors">
+                      <h4 className="text-base font-bold text-white group-hover:text-primary transition-colors">
                         {exp.role}
                       </h4>
                       <span className="font-label text-[10px] text-primary/80 uppercase bg-primary/5 border border-primary/10 px-2 py-0.5 rounded-full w-max mt-1 sm:mt-0">
@@ -149,7 +149,7 @@ export default function AboutPage() {
               {skills.map((skill) => (
                 <div key={skill.name} className="space-y-1.5">
                   <div className="flex justify-between text-xs font-label">
-                    <span className="dark:text-white text-neutral-900">{skill.name}</span>
+                    <span className="text-white">{skill.name}</span>
                     <span className="text-primary font-bold">{skill.pct}%</span>
                   </div>
                   <div className="w-full bg-surface-container h-2 rounded-full overflow-hidden border border-white/5">
