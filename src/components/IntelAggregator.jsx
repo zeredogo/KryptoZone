@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 export default function IntelAggregator() {
   const [chainFeeds, setChainFeeds] = useState([])
-  const [neuralFeeds, setNeuralFeeds] = useState([])
+  const [techFeeds, setTechFeeds] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError]   = useState(false)
 
@@ -30,7 +30,7 @@ export default function IntelAggregator() {
           url: item.url || `https://news.ycombinator.com/item?id=${item.objectID}`
         }))
 
-        // ── Neural Intel: Hacker News (direct Firebase API, no CORS issues) ──
+        // ── Tech Intel: Hacker News (direct Firebase API, no CORS issues) ──
         const hnIdsRes = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json', {
           cache: 'no-store'
         })
@@ -44,7 +44,7 @@ export default function IntelAggregator() {
         )
 
         const hnNews = hnItems.map((item, i) => ({
-          id: `neural-${i}`,
+          id: `tech-${i}`,
           category: 'TECH',
           title: item.title || 'Untitled',
           content: `↑ ${item.score} points · ${item.descendants ?? 0} comments · by ${item.by}`,
@@ -53,7 +53,7 @@ export default function IntelAggregator() {
 
         if (isMounted) {
           setChainFeeds(ccNews)
-          setNeuralFeeds(hnNews)
+          setTechFeeds(hnNews)
           setLoading(false)
         }
       } catch (err) {
@@ -130,18 +130,18 @@ export default function IntelAggregator() {
         </div>
       </div>
 
-      {/* Neural Intel Column */}
+      {/* Tech Intel Column */}
       <div className="space-y-6">
         <div className="flex items-center gap-3 border-b border-white/5 pb-4">
           <span className="material-symbols-outlined text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>
             psychology
           </span>
-          <h3 className="text-xl font-bold font-headline uppercase tracking-tight text-white">Neural Intel</h3>
+          <h3 className="text-xl font-bold font-headline uppercase tracking-tight text-white">Tech Intel</h3>
         </div>
         <div className="space-y-4">
-          {neuralFeeds.length === 0
+          {techFeeds.length === 0
             ? <p className="font-label text-xs text-outline italic">No intel available right now.</p>
-            : neuralFeeds.map(feed => <FeedCard key={feed.id} feed={feed} accentClass="text-tertiary" />)
+            : techFeeds.map(feed => <FeedCard key={feed.id} feed={feed} accentClass="text-tertiary" />)
           }
         </div>
       </div>
