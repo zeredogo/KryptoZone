@@ -28,7 +28,7 @@ export default function IdentityCard({ profile, loading, onViewAbout }) {
         <div className="p-6 space-y-6 flex-1 flex flex-col justify-between">
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-black font-headline dark:text-white text-neutral-900">{profile.name}</h2>
+              <h2 className="text-2xl font-black font-headline text-white">{profile.name}</h2>
               <span className="font-label text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full inline-block mt-2">
                 {profile.role}
               </span>
@@ -37,11 +37,11 @@ export default function IdentityCard({ profile, loading, onViewAbout }) {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <p className="font-label text-[10px] text-outline uppercase tracking-widest">Credentials</p>
-                <p className="text-sm font-bold dark:text-white text-neutral-900">{profile.credentials}</p>
+                <p className="text-sm font-bold text-white">{profile.credentials}</p>
               </div>
               <div className="space-y-1">
                 <p className="font-label text-[10px] text-outline uppercase tracking-widest">Expertise</p>
-                <p className="text-sm font-bold dark:text-white text-neutral-900">{profile.expertise}</p>
+                <p className="text-sm font-bold text-white">{profile.expertise}</p>
               </div>
             </div>
           </div>
