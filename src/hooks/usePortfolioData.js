@@ -56,10 +56,10 @@ export const usePortfolioData = () => {
     
     if (isMockMode) {
       // Fetch from localStorage or use defaults
-      const localProfile = localStorage.getItem('kryptozone_profile')
-      const localProjects = localStorage.getItem('kryptozone_projects')
-      const localOracle = localStorage.getItem('kryptozone_oracle')
-      const localFeeds = localStorage.getItem('kryptozone_feeds')
+      const localProfile = localStorage.getItem('kryptozone_profile_v2')
+      const localProjects = localStorage.getItem('kryptozone_projects_v2')
+      const localOracle = localStorage.getItem('kryptozone_oracle_v2')
+      const localFeeds = localStorage.getItem('kryptozone_feeds_v2')
 
       setProfile(localProfile ? JSON.parse(localProfile) : INITIAL_MOCK_PROFILE)
       setProjects(localProjects ? JSON.parse(localProjects) : INITIAL_MOCK_PROJECTS)
@@ -194,7 +194,7 @@ export const usePortfolioData = () => {
       }
       const updated = [newProj, ...projects]
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
       return { data: newProj, error: null }
     }
 
@@ -218,7 +218,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.map(p => p.id === id ? { ...p, ...updatedFields } : p)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -241,7 +241,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.filter(p => p.id !== id)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -265,7 +265,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = { ...profile, ...updatedFields }
       setProfile(updated)
-      localStorage.setItem('kryptozone_profile', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_profile_v2', JSON.stringify(updated))
       return { error: null }
     }
 
