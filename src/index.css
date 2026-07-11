@@ -82,6 +82,21 @@ html:not(.dark) {
   --color-error-dim: #aa1133;
 }
 
+/* ─── Light Mode: Override white text to dark navy ─── */
+html:not(.dark) .text-white {
+  color: #1a1a2e !important;
+}
+html:not(.dark) .hover\:text-white:hover {
+  color: #1a1a2e !important;
+}
+
+/* ─── Hamburger: hide above 769px ─── */
+@media (min-width: 769px) {
+  .mobile-only-icon {
+    display: none !important;
+  }
+}
+
 html:not(.dark) ::-webkit-scrollbar-track {
   background: #f0f2ff;
 }
