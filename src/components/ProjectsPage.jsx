@@ -77,7 +77,8 @@ export default function ProjectsPage({ projects, loading }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredProjects.map((project) => {
           const specs = parseSpecs(project.specs)
-          const isMainnet = project.status?.toUpperCase() === 'MAINNET'
+          const isLive = ['MAINNET', 'LIVE'].includes(project.status?.toUpperCase())
+          const isTestnet = project.status?.toUpperCase() === 'TESTNET'
 
           return (
             <div 
@@ -94,8 +95,10 @@ export default function ProjectsPage({ projects, loading }) {
                   <div className="absolute top-4 right-4">
                     <span 
                       className={`font-label text-[10px] px-2 py-0.5 rounded-sm font-bold ${
-                        isMainnet 
+                        isLive
                           ? 'bg-primary-container text-on-primary-container' 
+                          : isTestnet
+                          ? 'bg-amber-500/20 text-amber-400'
                           : 'bg-surface-variant text-on-surface-variant'
                       }`}
                     >
