@@ -30,7 +30,7 @@ export default function MarketOracle({ oracleData, loading }) {
     <section className="bg-surface-container-low p-8 rounded-xl ghost-border">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
         <div>
-          <h3 className="text-2xl font-black font-headline dark:text-white text-neutral-900">Market Oracle</h3>
+          <h3 className="text-2xl font-black font-headline text-white">Market Oracle</h3>
           <p className="font-label text-xs text-outline tracking-wider">REAL-TIME TELEMETRY // TOP 5 ASSETS</p>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 bg-surface-variant/30 rounded-full">
@@ -70,7 +70,7 @@ export default function MarketOracle({ oracleData, loading }) {
               </div>
               
               <div className="text-center space-y-1">
-                <p className="font-bold text-lg dark:text-white text-neutral-900">{asset.symbol}</p>
+                <p className="font-bold text-lg text-white">{asset.symbol}</p>
                 <div className="font-label text-xs text-outline">{formatPrice(asset.price)}</div>
                 <div className={`font-label text-[10px] inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 ${isPositive ? 'text-primary' : 'text-error'}`}>
                   <span className="material-symbols-outlined text-[10px]">
