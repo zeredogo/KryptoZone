@@ -3,9 +3,9 @@ import React from 'react'
 export default function Footer() {
   return (
     <footer className="bg-neutral-950 w-full py-12 px-8 mt-auto">
-      <div className="relative flex flex-col md:flex-row justify-end items-center gap-8 max-w-screen-2xl mx-auto">
-        <div className="flex items-center gap-3 w-full justify-center md:absolute md:left-1/2 md:-translate-x-1/2 md:w-auto">
-          <div className="text-neutral-500 font-label text-xs uppercase tracking-widest text-center">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-2xl mx-auto">
+        <div className="flex items-center gap-3 w-full justify-center md:w-auto md:justify-start">
+          <div className="text-neutral-500 font-label text-xs uppercase tracking-widest">
             © {new Date().getFullYear()} KryptoZone. System Status: 
           </div>
           <div className="flex items-center gap-1.5 px-2 py-0.5 bg-primary/5 rounded border border-primary/10">
