@@ -6,10 +6,10 @@ export default function StatsBento({ projectsCount }) {
       {/* Total Projects */}
       <div className="bg-surface-container-low p-6 rounded-xl ghost-border relative overflow-hidden group">
         <div className="absolute top-0 right-0 p-2 opacity-5 group-hover:opacity-10 transition-opacity">
-          <span className="material-symbols-outlined text-4xl dark:text-white text-neutral-900">folder</span>
+          <span className="material-symbols-outlined text-4xl text-white">folder</span>
         </div>
         <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Total Projects</p>
-        <h3 className="font-label text-3xl font-bold dark:text-white text-neutral-900">{projectsCount}</h3>
+        <h3 className="font-label text-3xl font-bold text-white">{projectsCount}</h3>
         <div className="mt-4 flex items-center gap-2 text-[10px] font-label text-primary">
           <span className="material-symbols-outlined text-xs">trending_up</span>
           +12% VS LAST QUARTER
@@ -19,7 +19,7 @@ export default function StatsBento({ projectsCount }) {
       {/* Success Ratio */}
       <div className="bg-surface-container-low p-6 rounded-xl ghost-border relative overflow-hidden group">
         <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Mainnet Success</p>
-        <h3 className="font-label text-3xl font-bold dark:text-white text-neutral-900">
+        <h3 className="font-label text-3xl font-bold text-white">
           99.8<span className="text-primary">%</span>
         </h3>
         <div className="mt-4 flex items-center gap-2 text-[10px] font-label text-primary">
@@ -41,7 +41,7 @@ export default function StatsBento({ projectsCount }) {
       {/* Uptime */}
       <div className="bg-surface-container-low p-6 rounded-xl ghost-border relative overflow-hidden group">
         <p className="font-label text-[10px] text-outline uppercase tracking-widest mb-1">Uptime</p>
-        <h3 className="font-label text-3xl font-bold dark:text-white text-neutral-900">
+        <h3 className="font-label text-3xl font-bold text-white">
           1,429<span className="text-neutral-500 text-sm">H</span>
         </h3>
         <div className="mt-4 flex items-center gap-2 text-[10px] font-label text-outline">
