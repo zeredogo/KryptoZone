@@ -172,7 +172,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline transition-all px-0 py-2 outline-none"
+              className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline transition-all px-0 py-2 outline-none"
               placeholder="e.g. Nebula Protocol"
               type="text"
               required
@@ -185,7 +185,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
             <input
               value={techStack}
               onChange={(e) => setTechStack(e.target.value)}
-              className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline transition-all px-0 py-2 outline-none"
+              className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline transition-all px-0 py-2 outline-none"
               placeholder="React, Solidity, Tailwind"
               type="text"
             />
@@ -198,7 +198,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
-                className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline transition-all px-0 py-2 appearance-none outline-none cursor-pointer"
+                className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline transition-all px-0 py-2 appearance-none outline-none cursor-pointer"
               >
                 <option value="Mainnet" className="bg-surface-container">Mainnet</option>
                 <option value="Staging" className="bg-surface-container">Staging</option>
@@ -213,7 +213,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
               <input
                 value={version}
                 onChange={(e) => setVersion(e.target.value)}
-                className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-label text-sm transition-all px-0 py-2 outline-none"
+                className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-label text-sm transition-all px-0 py-2 outline-none"
                 placeholder="v1.0.0"
                 type="text"
               />
@@ -226,7 +226,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline text-sm rounded-lg p-3 mt-2 outline-none"
+              className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm rounded-lg p-3 mt-2 outline-none"
               placeholder="Describe the project scope and security measures..."
               rows="3"
             ></textarea>
@@ -274,7 +274,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
                     <button
                       type="button"
                       onClick={(e) => { e.stopPropagation(); clearImage() }}
-                      className="flex items-center gap-1.5 px-3 py-1.5 bg-error dark:text-white text-neutral-900 text-xs font-label rounded cursor-pointer"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-error text-white text-xs font-label rounded cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-sm">delete</span>
                       Remove
@@ -335,7 +335,7 @@ export default function ProjectForm({ selectedProject, onSubmit, onCancel }) {
             <button
               type="button"
               onClick={handleCancelClick}
-              className="w-full bg-surface-variant/20 text-outline border border-outline-variant/30 py-3 font-label text-xs uppercase tracking-widest hover:dark:text-white text-neutral-900 transition-all cursor-pointer"
+              className="w-full bg-surface-variant/20 text-outline border border-outline-variant/30 py-3 font-label text-xs uppercase tracking-widest hover:text-white transition-all cursor-pointer"
             >
               Cancel Operation
             </button>
