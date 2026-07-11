@@ -7,7 +7,7 @@ export default function IntegrityWidget({ isMockMode }) {
         <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
           verified_user
         </span>
-        <h3 className="font-headline font-bold text-sm text-white">SUPABASE_RLS_PROTOCOL</h3>
+        <h3 className="font-headline font-bold text-sm dark:text-white text-neutral-900">SUPABASE_RLS_PROTOCOL</h3>
       </div>
       
       <div className="space-y-2">
