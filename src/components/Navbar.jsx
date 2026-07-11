@@ -48,7 +48,7 @@ export default function Navbar({ currentTab, setCurrentTab }) {
               className={`font-headline tracking-tight text-sm font-bold transition-all px-2 py-1 rounded cursor-pointer ${
                 currentTab === tab
                   ? 'text-indigo-400 border-b-2 border-indigo-500 pb-1'
-                  : 'text-neutral-400 hover:dark:text-white text-neutral-900 hover:bg-white/5'
+                  : 'text-neutral-400 hover:text-white hover:bg-white/5'
               }`}
             >
               {label}
@@ -60,7 +60,7 @@ export default function Navbar({ currentTab, setCurrentTab }) {
               className={`font-headline tracking-tight text-sm font-bold transition-all px-2 py-1 rounded cursor-pointer ${
                 currentTab === 'admin'
                   ? 'text-indigo-400 border-b-2 border-indigo-500 pb-1'
-                  : 'text-neutral-400 hover:dark:text-white text-neutral-900 hover:bg-white/5'
+                  : 'text-neutral-400 hover:text-white hover:bg-white/5'
               }`}
             >
               Control Plane
@@ -89,10 +89,10 @@ export default function Navbar({ currentTab, setCurrentTab }) {
             </button>
           )}
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger - hidden above 769px */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="max-[769px]:block hidden material-symbols-outlined text-neutral-400 hover:dark:text-white text-neutral-900 cursor-pointer p-1 text-2xl"
+            className="mobile-only-icon material-symbols-outlined text-neutral-400 hover:text-white cursor-pointer p-1 text-2xl"
           >
             {mobileOpen ? 'close' : 'menu'}
           </button>
@@ -101,7 +101,7 @@ export default function Navbar({ currentTab, setCurrentTab }) {
 
       {/* Mobile Dropdown — includes theme toggle + all nav links */}
       {mobileOpen && (
-        <div className="max-[769px]:block hidden bg-neutral-950/98 border-t border-white/5 px-6 py-4 flex flex-col gap-1">
+        <div className="md:hidden bg-neutral-950/98 border-t border-white/5 px-6 py-4 flex flex-col gap-1">
           {navLinks.map(({ label, tab }) => (
             <button
               key={tab}
