@@ -15,7 +15,7 @@ const INITIAL_MOCK_PROJECTS = [
   {
     id: 'p4',
     title: 'KryptoZone Ecosystem Dashboard',
-    description: 'The centralized control center and technical blueprint archive for my full-stack web engineering portfolios. Built using Next.js, React, Tailwind CSS, and Supabase to seamlessly unify Web2 infrastructure, decentralized Web3 protocols, and neural network data streams.',
+    description: 'The centralized control center and technical blueprint archive for my full-stack web engineering portfolios. Built using Next.js, React, Tailwind CSS, and Supabase to seamlessly unify Web2 infrastructure and decentralized Web3 protocols into a single cohesive dashboard.',
     image_url: '/kryptozone.png',
     status: 'MAINNET',
     live_url: 'https://krypto-zone.vercel.app/',
@@ -78,8 +78,8 @@ const INITIAL_MOCK_ORACLE = [
 const INITIAL_MOCK_FEEDS = [
   { id: 'f1', feed_type: 'chain', category: 'SECURITY_ALERT', title: 'Protocol Vulnerability Detected in Layer-2 Bridges', content: 'Critical vulnerability patch released for cross-chain liquidity providers.' },
   { id: 'f2', feed_type: 'chain', category: 'ECOSYSTEM_GROWTH', title: 'Web3 Privacy Layer Reaches Mainnet Milestone', content: 'Zero-knowledge proofs integration completes final audit phase.' },
-  { id: 'f3', feed_type: 'neural', category: 'AI_MODEL_UPDATE', title: 'GPT-5 Training Setups leaked in Research Paper', content: 'Deep-dive into the architectural changes for the next-gen LLMs.' },
-  { id: 'f4', feed_type: 'neural', category: 'CHIP_WARS', title: 'The Shift to On-Device Neural Processing', content: 'Edge computing becomes the priority for silicon manufacturers in 2024.' }
+  { id: 'f3', feed_type: 'tech', category: 'OPEN_SOURCE', title: 'Next.js 15 Stable Released with Turbopack Default', content: 'Server components and partial prerendering land as stable features in the latest release.' },
+  { id: 'f4', feed_type: 'tech', category: 'SECURITY', title: 'Critical Node.js Vulnerability Patched in LTS Versions', content: 'Maintainers urge immediate upgrade to mitigate remote code execution risk in older runtimes.' }
 ]
 
 export const usePortfolioData = () => {
