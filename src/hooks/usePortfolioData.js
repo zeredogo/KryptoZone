@@ -50,14 +50,15 @@ const INITIAL_MOCK_PROJECTS = [
   },
   {
     id: 'p4',
-    title: 'Void DEX',
-    description: 'Technical blueprints and production-ready modules recently exited from the KryptoZone forge.',
-    image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5U_jaS1VSGRxyL2uaZZmojry17SJsVSmX37FfljOv-HznDYUlwmtLcX4XDu1gxh3k8c2Dk9JZHb-GUfxQ9quniRU5QQkqPidX4ru5_e8d96MxcsQefIhy92Jt3j-5gSNEo0L3IGhPESkGsqafNJF9Y59_8DHHNl0ww_cYHC685Q6blq6RQ-XQmuVequ70IllW-dEDd-VFDHbCaLWFYthR3Kl-F9gf7qTf4NwAYWOttDn-lem3XlFEdG0lltPBJ4vIJGo9-Z_bTEU',
-    status: 'Testnet',
-    version: 'v0.8.0',
+    title: 'Cocktails DB',
+    description: 'An interactive mixology engine pulling dynamic recipes from external REST endpoints. Featuring state-managed query filters and a responsive UI layout.',
+    image_url: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=800&q=80',
+    status: 'LIVE',
+    live_url: 'https://krypto-zone-cocktails.netlify.app/',
+    version: 'v1.0.0',
     specs: [
-      { lang: 'TYPESCRIPT', pct: 50 },
-      { lang: 'VYPER', pct: 50 }
+      { lang: 'REACT', pct: 80 },
+      { lang: 'CSS / TAILWIND', pct: 20 }
     ]
   }
 ]
