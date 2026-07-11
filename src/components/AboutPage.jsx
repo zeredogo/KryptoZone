@@ -26,7 +26,7 @@ export default function AboutPage() {
       year: 'FORMER (2023 - 2024)',
       role: 'Blockchain Development Lead',
       organization: 'KCCA COHORT & Ecosystem Labs',
-      description: 'Engineered and deployed secure smart contracts, successfully integrating Web3 capabilities into high-performance web stacks. Conceptualized and implemented The Obsidian Nexus portfolio infrastructure, utilizing complex state management to process real-time cryptocurrency data streams. Led technical frameworks bridging the gap between artificial intelligence architectures and on-chain telemetry.'
+      description: 'Engineered and deployed secure smart contracts, successfully integrating Web3 capabilities into high-performance web stacks. Conceptualized and implemented The Obsidian Nexus portfolio infrastructure, utilizing complex state management to process real-time cryptocurrency data streams. Led technical frameworks bridging the gap between decentralized architectures and on-chain telemetry.'
     },
     {
       year: 'FORMER (2018)',
@@ -99,7 +99,7 @@ export default function AboutPage() {
               <h3 className="font-label text-xs text-primary uppercase tracking-wider font-bold">Mission Statement</h3>
             </div>
             <p className="text-on-surface-variant leading-relaxed">
-              My mission is to design scalable, intelligent architectures that seamlessly unite Web2 frameworks, Web3 decentralized protocols, and artificial intelligence. Backed by a background in tech education and business logic, I possess a rare blend of skills required to clearly translate complex requirements into secure, high-performance systems.
+              My mission is to design scalable, intelligent architectures that seamlessly unite Web2 frameworks and Web3 decentralized protocols. Backed by a background in tech education and business logic, I possess a rare blend of skills required to clearly translate complex requirements into secure, high-performance systems.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
               I am committed to absolute data transparency, tight security protocols (including advanced Row Level Security), and clean, intuitive user interfaces that bring high-density data to life.
