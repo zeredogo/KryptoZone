@@ -13,16 +13,30 @@ const INITIAL_MOCK_PROFILE = {
 
 const INITIAL_MOCK_PROJECTS = [
   {
-    id: 'p1',
-    title: 'Cocktails DB',
-    description: 'An interactive mixology engine pulling dynamic recipes from external REST endpoints. Featuring state-managed query filters and a responsive UI layout.',
-    image_url: '/cocktailsdb.png',
-    status: 'LIVE',
-    live_url: 'https://krypto-zone-cocktails.netlify.app/',
+    id: 'p4',
+    title: 'KryptoZone Ecosystem Dashboard',
+    description: 'The centralized control center and technical blueprint archive for my full-stack web engineering portfolios. Built using Next.js, React, Tailwind CSS, and Supabase to seamlessly unify Web2 infrastructure, decentralized Web3 protocols, and neural network data streams.',
+    image_url: '/kryptozone.png',
+    status: 'MAINNET',
+    live_url: 'https://krypto-zone.vercel.app/',
     version: 'v1.0.0',
     specs: [
-      { lang: 'REACT', pct: 80 },
-      { lang: 'CSS / TAILWIND', pct: 20 }
+      { lang: 'NEXT.JS / REACT', pct: 60 },
+      { lang: 'TAILWIND CSS', pct: 25 },
+      { lang: 'SUPABASE / SQL', pct: 15 }
+    ]
+  },
+  {
+    id: 'p3',
+    title: 'BigManBrand',
+    description: 'A high-end e-commerce interface designed with minimal aesthetics and clean structural layouts. Built around high-density typography, dynamic product filtering, and a fully fluid, conversion-optimized user flow.',
+    image_url: '/bigmanbrand.png',
+    status: 'PRODUCTION',
+    live_url: 'https://big-man-brand.vercel.app/',
+    version: 'v1.0.0',
+    specs: [
+      { lang: 'NEXT.JS / REACT', pct: 75 },
+      { lang: 'TAILWIND CSS', pct: 25 }
     ]
   },
   {
@@ -39,16 +53,16 @@ const INITIAL_MOCK_PROJECTS = [
     ]
   },
   {
-    id: 'p3',
-    title: 'BigManBrand',
-    description: 'A high-end e-commerce interface designed with minimal aesthetics and clean structural layouts. Built around high-density typography, dynamic product filtering, and a fully fluid, conversion-optimized user flow.',
-    image_url: '/bigmanbrand.png',
-    status: 'PRODUCTION',
-    live_url: 'https://big-man-brand.vercel.app/',
+    id: 'p1',
+    title: 'Cocktails DB',
+    description: 'An interactive mixology engine pulling dynamic recipes from external REST endpoints. Featuring state-managed query filters and a responsive UI layout.',
+    image_url: '/cocktailsdb.png',
+    status: 'LIVE',
+    live_url: 'https://krypto-zone-cocktails.netlify.app/',
     version: 'v1.0.0',
     specs: [
-      { lang: 'NEXT.JS / REACT', pct: 75 },
-      { lang: 'TAILWIND CSS', pct: 25 }
+      { lang: 'REACT', pct: 80 },
+      { lang: 'CSS / TAILWIND', pct: 20 }
     ]
   }
 ]
@@ -82,10 +96,10 @@ export const usePortfolioData = () => {
     
     if (isMockMode) {
       // Fetch from localStorage or use defaults
-      const localProfile = localStorage.getItem('kryptozone_profile_v4')
-      const localProjects = localStorage.getItem('kryptozone_projects_v4')
-      const localOracle = localStorage.getItem('kryptozone_oracle_v4')
-      const localFeeds = localStorage.getItem('kryptozone_feeds_v4')
+      const localProfile = localStorage.getItem('kryptozone_profile_v5')
+      const localProjects = localStorage.getItem('kryptozone_projects_v5')
+      const localOracle = localStorage.getItem('kryptozone_oracle_v5')
+      const localFeeds = localStorage.getItem('kryptozone_feeds_v5')
 
       setProfile(localProfile ? JSON.parse(localProfile) : INITIAL_MOCK_PROFILE)
       setProjects(localProjects ? JSON.parse(localProjects) : INITIAL_MOCK_PROJECTS)
@@ -220,7 +234,7 @@ export const usePortfolioData = () => {
       }
       const updated = [newProj, ...projects]
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v4', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v5', JSON.stringify(updated))
       return { data: newProj, error: null }
     }
 
@@ -244,7 +258,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.map(p => p.id === id ? { ...p, ...updatedFields } : p)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v4', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v5', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -267,7 +281,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.filter(p => p.id !== id)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v4', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v5', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -291,7 +305,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = { ...profile, ...updatedFields }
       setProfile(updated)
-      localStorage.setItem('kryptozone_profile_v4', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_profile_v5', JSON.stringify(updated))
       return { error: null }
     }
 
