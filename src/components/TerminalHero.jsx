@@ -48,10 +48,10 @@ export default function TerminalHero() {
 
       <div className="mt-12 relative z-10">
         <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-tight mb-6">
-          System <span className="text-primary italic">Architecture</span> <br />Redefined.
+          The Next <span className="text-primary italic">Evolution</span> <br />of Architecture.
         </h1>
         <p className="max-w-xl text-on-surface-variant text-lg">
-          Navigating the convergence of decentralized protocols and artificial neural networks. High-density data for high-performance minds.
+          Bridging the speed of Web2, the trustless security of Web3, and the raw power of AI. We build seamless data pipelines for decentralized neural networks.
         </p>
       </div>
 
