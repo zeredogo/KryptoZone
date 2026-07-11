@@ -21,7 +21,7 @@ export default function AdminSidebar({ activeTab, setActiveTab }) {
               className={`w-full flex items-center gap-3 px-4 py-2 rounded transition-all cursor-pointer ${
                 isActive 
                   ? 'bg-primary-container text-on-primary-container font-semibold' 
-                  : 'text-on-surface-variant hover:bg-white/5 hover:text-white'
+                  : 'text-on-surface-variant hover:bg-white/5 hover:dark:text-white text-neutral-900'
               }`}
             >
               <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
