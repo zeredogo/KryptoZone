@@ -18,6 +18,12 @@ export default function AboutPage() {
     },
     {
       year: 'FORMER (2023 - 2024)',
+      role: 'Business Systems Analyst',
+      organization: 'Command Infrastructure Systems',
+      description: 'Engineered core organizational frameworks and translated complex business logic parameters into highly modular, digestible technical instruction blocks. Combined operational management systems with data workflows to optimize resource allocation and project execution pipelines.'
+    },
+    {
+      year: 'FORMER (2023 - 2024)',
       role: 'Blockchain Development Lead',
       organization: 'KCCA COHORT & Ecosystem Labs',
       description: 'Engineered and deployed secure smart contracts, successfully integrating Web3 capabilities into high-performance web stacks. Conceptualized and implemented The Obsidian Nexus portfolio infrastructure, utilizing complex state management to process real-time cryptocurrency data streams. Led technical frameworks bridging the gap between artificial intelligence architectures and on-chain telemetry.'
