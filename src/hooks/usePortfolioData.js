@@ -14,45 +14,9 @@ const INITIAL_MOCK_PROFILE = {
 const INITIAL_MOCK_PROJECTS = [
   {
     id: 'p1',
-    title: 'Nexus Protocol',
-    description: 'Technical blueprints and production-ready modules recently exited from the KryptoZone forge.',
-    image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCiaBjDabVYgjAsQeDyHr-7a3EeBWDa-oSndToOBGkLbvqfUO8qAA91h_4VTatlDJfqcVbQsRdtJRW9yGTAA9GKEoS399-snvW7mpu-vy2-UqSGdSpOWIgWJpzuQAOYIa6xeTZ1w9TmA3F9fmO46HJQFQdgLsYw1dMbIAsUtYbQXzY0BCm8WCrfORk_CZft6sVOxrd2Sr7OOH3a4FvdXPtVlTj9hID_NE0u0LiNdiei-R_Q6r3jDdF1kchn26UCWtcNKKps9c_iklg',
-    status: 'Mainnet',
-    version: 'v2.1.0',
-    specs: [
-      { lang: 'SOLIDITY', pct: 75 },
-      { lang: 'REACT', pct: 25 }
-    ]
-  },
-  {
-    id: 'p2',
-    title: 'Aeon Oracle',
-    description: 'Technical blueprints and production-ready modules recently exited from the KryptoZone forge.',
-    image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCF35Lq8AdROdO9K8XsCL8En-d8Rw048ipyFKvmcvTnugo3Bb0b-AgQ6-LD0N8gC8xD4_vvBv-HEz8nah5W_HzqMugQ9iAgPBGDr0_mK20VIs6ZqfdHRVgamNKfnUhIYVurrg8voWTSLr1bE38biaHHZ5Vp21Cz1db-chrj6oENDnN2MIKHKhX1UIHD6a-FsvYAoWwkKGI0PGp7QyCrq0Hv5aEYcAQnlSnD2tD5srsnnebx5R-OXRZ3fCQxuGUGhWpUANZ8ylv2W0E',
-    status: 'Mainnet',
-    version: 'v1.0.4',
-    specs: [
-      { lang: 'RUST', pct: 90 },
-      { lang: 'GO', pct: 10 }
-    ]
-  },
-  {
-    id: 'p3',
-    title: 'Neural Bridge',
-    description: 'Technical blueprints and production-ready modules recently exited from the KryptoZone forge.',
-    image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKP12iUlmJQdKCuxqZo-kvaU2zkXtmFNqrl8qRhScTkO4xjlA_Xe1RA0vi3K_cekNAytA5azVpORo0qsb4bTYTguOff8lf89yQrpim8k8QcFLItqAmjBRDlzCfNUDnHeti8hiTl2ZrBHSxXdPgXiy6h5iEPDk9Y9BkJCe5QXA4twdbfG5UPUJTZ7m1eqTg9dzMKwWrB2fhtOxcx7RE0Nl1PLtLvibhvZCLHTOdZhJ_o31Rz6oF5qzQahsa9SsYr9sHix4RwC39TvE',
-    status: 'Mainnet',
-    version: 'v1.1.2',
-    specs: [
-      { lang: 'PYTHON', pct: 60 },
-      { lang: 'PYTORCH', pct: 40 }
-    ]
-  },
-  {
-    id: 'p4',
     title: 'Cocktails DB',
     description: 'An interactive mixology engine pulling dynamic recipes from external REST endpoints. Featuring state-managed query filters and a responsive UI layout.',
-    image_url: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=800&q=80',
+    image_url: '/cocktailsdb.png',
     status: 'LIVE',
     live_url: 'https://krypto-zone-cocktails.netlify.app/',
     version: 'v1.0.0',
