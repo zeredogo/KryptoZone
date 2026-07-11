@@ -36,7 +36,7 @@ export default function Navbar({ currentTab, setCurrentTab }) {
           className="text-xl font-black tracking-tighter text-indigo-400 font-label cursor-pointer flex-shrink-0"
           onClick={() => handleNav('home')}
         >
-          KryptoZone
+          KRYPTOZONE
         </div>
 
         {/* Center — Nav links absolutely centered on desktop */}
