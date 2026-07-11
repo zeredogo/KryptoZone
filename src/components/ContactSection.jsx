@@ -9,7 +9,7 @@ export default function ContactSection() {
         
         <div className="relative z-10 max-w-lg space-y-6">
           <div className="space-y-2">
-            <h3 className="text-3xl font-black font-headline dark:text-white text-neutral-900">Let's Connect</h3>
+            <h3 className="text-3xl font-black font-headline text-white">Let's Connect</h3>
             <p className="text-on-surface-variant text-sm">
               Have a project in mind or want to collaborate on the next big web3 protocol? My inbox is always open.
             </p>
