@@ -51,7 +51,7 @@ export default function TerminalHero() {
           The Next <span className="text-primary italic">Evolution</span> <br />of Architecture.
         </h1>
         <p className="max-w-xl text-on-surface-variant text-lg">
-          Bridging the speed of Web2, the trustless security of Web3, and the raw power of AI. We build seamless data pipelines for decentralized neural networks.
+          Bridging the speed of Web2 and the trustless security of Web3. We build seamless data pipelines for decentralized networks.
         </p>
       </div>
 
