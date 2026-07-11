@@ -78,7 +78,7 @@ export default function ControlPlane({
           <section className="space-y-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
               <div className="space-y-1">
-                <h1 className="text-4xl font-black font-headline tracking-tighter text-white">CONTROL_PLANE</h1>
+                <h1 className="text-4xl font-black font-headline tracking-tighter dark:text-white text-neutral-900">CONTROL_PLANE</h1>
                 <p className="font-label text-xs text-outline uppercase tracking-widest">
                   Global Project Management & Security Node
                 </p>
@@ -120,25 +120,25 @@ export default function ControlPlane({
 
           {activeSubTab === 'achievements' && (
             <div className="bg-surface-container p-8 rounded-xl ghost-border space-y-6">
-              <h2 className="font-headline text-xl font-bold text-white mb-6">SYSTEM_ACHIEVEMENTS</h2>
+              <h2 className="font-headline text-xl font-bold dark:text-white text-neutral-900 mb-6">SYSTEM_ACHIEVEMENTS</h2>
               <div className="space-y-4">
                 <div className="p-4 bg-surface-container-low rounded-lg border border-white/5 flex justify-between items-center">
                   <div>
-                    <h4 className="font-bold text-white text-md">Layer-2 Protocol Audit Approved</h4>
+                    <h4 className="font-bold dark:text-white text-neutral-900 text-md">Layer-2 Protocol Audit Approved</h4>
                     <p className="text-xs text-outline font-label mt-1">COMPLETED: MAY 2026 // AUDITOR: CERTICK</p>
                   </div>
                   <span className="material-symbols-outlined text-primary">military_tech</span>
                 </div>
                 <div className="p-4 bg-surface-container-low rounded-lg border border-white/5 flex justify-between items-center">
                   <div>
-                    <h4 className="font-bold text-white text-md">V2 Liquidity Pools Active</h4>
+                    <h4 className="font-bold dark:text-white text-neutral-900 text-md">V2 Liquidity Pools Active</h4>
                     <p className="text-xs text-outline font-label mt-1">COMPLETED: JAN 2026 // NODE: MAINNET</p>
                   </div>
                   <span className="material-symbols-outlined text-primary">military_tech</span>
                 </div>
                 <div className="p-4 bg-surface-container-low rounded-lg border border-white/5 flex justify-between items-center">
                   <div>
-                    <h4 className="font-bold text-white text-md">Former Technology Instructor Residency</h4>
+                    <h4 className="font-bold dark:text-white text-neutral-900 text-md">Former Technology Instructor Residency</h4>
                     <p className="text-xs text-outline font-label mt-1">LOGGED: DEC 2025 // SEC_ROOT</p>
                   </div>
                   <span className="material-symbols-outlined text-primary">military_tech</span>
@@ -149,7 +149,7 @@ export default function ControlPlane({
 
           {activeSubTab === 'logs' && (
             <div className="bg-neutral-950 p-8 rounded-xl ghost-border space-y-6 font-label">
-              <h2 className="text-xl font-bold text-white mb-6 font-headline">SYSTEM_SECURITY_LOGS</h2>
+              <h2 className="text-xl font-bold dark:text-white text-neutral-900 mb-6 font-headline">SYSTEM_SECURITY_LOGS</h2>
               <div className="space-y-2 text-xs text-primary/80 max-h-96 overflow-y-auto select-all">
                 <p>[{new Date().toISOString()}] [OK] AUTHENTICATION GRANTED - USER: ROOT_SECURE</p>
                 <p>[{new Date().toISOString()}] [OK] SECURE_CONNECTION_STABLISHED: AES-256-GCM</p>
@@ -163,7 +163,7 @@ export default function ControlPlane({
 
           {activeSubTab === 'settings' && (
             <div className="bg-surface-container p-8 rounded-xl ghost-border max-w-2xl">
-              <h2 className="font-headline text-xl font-bold text-white mb-6">SYSTEM_SETTINGS</h2>
+              <h2 className="font-headline text-xl font-bold dark:text-white text-neutral-900 mb-6">SYSTEM_SETTINGS</h2>
               <form onSubmit={handleProfileSubmit} className="space-y-6">
                 {profileSuccessMsg && (
                   <div className="p-3 bg-primary/10 border border-primary/20 rounded text-primary text-xs font-label">
@@ -177,7 +177,7 @@ export default function ControlPlane({
                     value={profileName}
                     onChange={(e) => setProfileName(e.target.value)}
                     type="text" 
-                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none" 
+                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none" 
                   />
                 </div>
 
@@ -188,7 +188,7 @@ export default function ControlPlane({
                       value={profileRole}
                       onChange={(e) => setProfileRole(e.target.value)}
                       type="text" 
-                      className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none" 
+                      className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none" 
                     />
                   </div>
                   <div className="space-y-2">
@@ -197,7 +197,7 @@ export default function ControlPlane({
                       value={profileCredentials}
                       onChange={(e) => setProfileCredentials(e.target.value)}
                       type="text" 
-                      className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none" 
+                      className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none" 
                     />
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function ControlPlane({
                     value={profileExpertise}
                     onChange={(e) => setProfileExpertise(e.target.value)}
                     type="text" 
-                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none" 
+                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none" 
                   />
                 </div>
 
@@ -218,7 +218,7 @@ export default function ControlPlane({
                     value={profileAvatarUrl}
                     onChange={(e) => setProfileAvatarUrl(e.target.value)}
                     type="url" 
-                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none text-xs" 
+                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none text-xs" 
                   />
                 </div>
 
@@ -228,7 +228,7 @@ export default function ControlPlane({
                     value={profileBio}
                     onChange={(e) => setProfileBio(e.target.value)}
                     rows="3" 
-                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 text-white rounded p-3 outline-none" 
+                    className="w-full bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 rounded p-3 outline-none" 
                   ></textarea>
                 </div>
 
