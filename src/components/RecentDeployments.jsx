@@ -53,7 +53,7 @@ export default function RecentDeployments({ projects, loading, onViewAll }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {recentProjects.map((project) => {
           const specs = parseSpecs(project.specs)
-          const isLive = ['MAINNET', 'LIVE'].includes(project.status?.toUpperCase())
+          const isLive = ['MAINNET', 'LIVE', 'PRODUCTION'].includes(project.status?.toUpperCase())
           const isTestnet = project.status?.toUpperCase() === 'TESTNET'
 
           return (
