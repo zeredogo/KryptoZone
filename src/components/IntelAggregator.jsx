@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-// RSS to JSON proxy — CORS-friendly, no API key needed
-const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url='
-
-const CHAIN_RSS = encodeURIComponent('https://cointelegraph.com/rss')
-const NEURAL_RSS = encodeURIComponent('https://feeds.feedburner.com/oreilly/radar/atom')
+// Intel APIs
 
 export default function IntelAggregator() {
   const [chainFeeds, setChainFeeds] = useState([])
@@ -20,23 +16,19 @@ export default function IntelAggregator() {
       setError(false)
 
       try {
-        // ── Chain Intel: CoinTelegraph crypto news ──
-        const ccRes = await fetch(`${RSS2JSON}${CHAIN_RSS}&count=3`, {
+        // ── Chain Intel: Hacker News Algolia (Crypto keyword) ──
+        const ccRes = await fetch('https://hn.algolia.com/api/v1/search?query=crypto&tags=story', {
           cache: 'no-store'
         })
         const ccData = await ccRes.json()
 
-        const ccNews = ccData.status === 'ok'
-          ? (ccData.items || []).slice(0, 3).map((item, i) => ({
-              id: `chain-${i}`,
-              category: item.categories?.[0] || 'CRYPTO',
-              title: item.title,
-              content: (item.description || item.content || '')
-                .replace(/<[^>]+>/g, '')
-                .substring(0, 160) + '…',
-              url: item.link
-            }))
-          : []
+        const ccNews = (ccData.hits || []).slice(0, 3).map((item, i) => ({
+          id: `chain-${i}`,
+          category: 'CRYPTO',
+          title: item.title || 'Untitled',
+          content: `↑ ${item.points} points · ${item.num_comments} comments · by ${item.author}`,
+          url: item.url || `https://news.ycombinator.com/item?id=${item.objectID}`
+        }))
 
         // ── Neural Intel: Hacker News (direct Firebase API, no CORS issues) ──
         const hnIdsRes = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json', {
