@@ -24,6 +24,19 @@ const INITIAL_MOCK_PROJECTS = [
       { lang: 'REACT', pct: 80 },
       { lang: 'CSS / TAILWIND', pct: 20 }
     ]
+  },
+  {
+    id: 'p2',
+    title: 'Color Matrix Generator',
+    description: 'A precision color tint and shade matrix generator designed to render exact algorithmic value shifts based on a core hex input. Features single-click clipboard operations and high-fidelity rendering.',
+    image_url: '/colormatrix.png',
+    status: 'LIVE',
+    live_url: 'https://krypto-zone-colors-generator.netlify.app/',
+    version: 'v1.0.0',
+    specs: [
+      { lang: 'REACT', pct: 70 },
+      { lang: 'CSS / TAILWIND', pct: 30 }
+    ]
   }
 ]
 
@@ -56,10 +69,10 @@ export const usePortfolioData = () => {
     
     if (isMockMode) {
       // Fetch from localStorage or use defaults
-      const localProfile = localStorage.getItem('kryptozone_profile_v2')
-      const localProjects = localStorage.getItem('kryptozone_projects_v2')
-      const localOracle = localStorage.getItem('kryptozone_oracle_v2')
-      const localFeeds = localStorage.getItem('kryptozone_feeds_v2')
+      const localProfile = localStorage.getItem('kryptozone_profile_v3')
+      const localProjects = localStorage.getItem('kryptozone_projects_v3')
+      const localOracle = localStorage.getItem('kryptozone_oracle_v3')
+      const localFeeds = localStorage.getItem('kryptozone_feeds_v3')
 
       setProfile(localProfile ? JSON.parse(localProfile) : INITIAL_MOCK_PROFILE)
       setProjects(localProjects ? JSON.parse(localProjects) : INITIAL_MOCK_PROJECTS)
@@ -194,7 +207,7 @@ export const usePortfolioData = () => {
       }
       const updated = [newProj, ...projects]
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v3', JSON.stringify(updated))
       return { data: newProj, error: null }
     }
 
@@ -218,7 +231,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.map(p => p.id === id ? { ...p, ...updatedFields } : p)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v3', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -241,7 +254,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = projects.filter(p => p.id !== id)
       setProjects(updated)
-      localStorage.setItem('kryptozone_projects_v2', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_projects_v3', JSON.stringify(updated))
       return { error: null }
     }
 
@@ -265,7 +278,7 @@ export const usePortfolioData = () => {
     if (isMockMode) {
       const updated = { ...profile, ...updatedFields }
       setProfile(updated)
-      localStorage.setItem('kryptozone_profile_v2', JSON.stringify(updated))
+      localStorage.setItem('kryptozone_profile_v3', JSON.stringify(updated))
       return { error: null }
     }
 
