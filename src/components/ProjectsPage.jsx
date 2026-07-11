@@ -49,7 +49,7 @@ export default function ProjectsPage({ projects, loading }) {
       {/* Header */}
       <div className="border-b border-white/5 pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
-          <h1 className="text-4xl font-black font-headline dark:text-white text-neutral-900 font-bold">Protocol Repository</h1>
+          <h1 className="text-4xl font-black font-headline text-white font-bold">Protocol Repository</h1>
           <p className="font-label text-xs text-primary uppercase tracking-widest mt-1">
             Complete Index // KryptoZone Smart Blueprints
           </p>
@@ -64,7 +64,7 @@ export default function ProjectsPage({ projects, loading }) {
               className={`px-3 py-1 font-label text-[10px] uppercase tracking-widest border transition-all rounded cursor-pointer ${
                 filter === s
                   ? 'bg-primary/10 text-primary border-primary/30'
-                  : 'bg-transparent text-outline border-outline-variant/30 hover:dark:text-white text-neutral-900 hover:border-outline-variant'
+                  : 'bg-transparent text-outline border-outline-variant/30 hover:text-white hover:border-outline-variant'
               }`}
             >
               {s}
@@ -106,7 +106,7 @@ export default function ProjectsPage({ projects, loading }) {
 
                 <div className="p-6 space-y-6">
                   <div>
-                    <h4 className="text-lg font-bold mb-4 dark:text-white text-neutral-900">{project.title}</h4>
+                    <h4 className="text-lg font-bold mb-4 text-white">{project.title}</h4>
                     <div className="space-y-3">
                       <p className="font-label text-[10px] text-outline tracking-widest">SYSTEM SPECS</p>
                       <div className="space-y-2">
@@ -134,7 +134,7 @@ export default function ProjectsPage({ projects, loading }) {
               <div className="p-6 pt-0 flex gap-3">
                 <button 
                   onClick={() => setSelectedProject(project)}
-                  className="flex-1 py-2 bg-surface-variant/30 hover:bg-surface-variant/60 dark:text-white text-neutral-900 transition-all font-bold text-sm rounded cursor-pointer"
+                  className="flex-1 py-2 bg-surface-variant/30 hover:bg-surface-variant/60 text-white transition-all font-bold text-sm rounded cursor-pointer"
                 >
                   Specs
                 </button>
@@ -165,7 +165,7 @@ export default function ProjectsPage({ projects, loading }) {
           <div className="bg-surface-container-low max-w-2xl w-full rounded-xl overflow-hidden ghost-border flex flex-col relative">
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-neutral-400 hover:dark:text-white text-neutral-900 cursor-pointer z-10 p-2 bg-black/40 rounded-full"
+              className="absolute top-4 right-4 text-neutral-400 hover:text-white cursor-pointer z-10 p-2 bg-black/40 rounded-full"
             >
               <span className="material-symbols-outlined">close</span>
             </button>
@@ -181,7 +181,7 @@ export default function ProjectsPage({ projects, loading }) {
                 <span className="bg-primary/10 text-primary border border-primary/20 font-label text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold mb-2 inline-block">
                   {selectedProject.status}
                 </span>
-                <h2 className="text-3xl font-black font-headline dark:text-white text-neutral-900 mt-2">{selectedProject.title}</h2>
+                <h2 className="text-3xl font-black font-headline text-white mt-2">{selectedProject.title}</h2>
               </div>
             </div>
 
