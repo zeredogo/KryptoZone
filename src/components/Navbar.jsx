@@ -68,8 +68,17 @@ export default function Navbar({ currentTab, setCurrentTab }) {
           )}
         </div>
 
-        {/* Right — Desktop: Logout only. Mobile: hamburger */}
+        {/* Right — Desktop: Theme toggle + Logout only. Mobile: hamburger */}
         <div className="ml-auto flex items-center gap-3">
+          {/* Theme toggle — desktop only */}
+          <button
+            onClick={toggleDarkMode}
+            className="hidden md:flex material-symbols-outlined text-neutral-400 hover:bg-white/5 p-2 rounded transition-all duration-200 cursor-pointer"
+            title="Toggle theme"
+          >
+            {darkMode ? 'light_mode' : 'dark_mode'}
+          </button>
+
           {/* Logout button — desktop only when authenticated */}
           {user && (
             <button
