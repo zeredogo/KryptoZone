@@ -42,7 +42,7 @@ export default function ProjectsPage({ projects, loading }) {
     return proj.status?.toUpperCase() === filter
   })
 
-  const statuses = ['ALL', 'MAINNET', 'TESTNET', 'BETA', 'DEVELOPMENT', 'STAGING']
+  const statuses = ['ALL', 'MAINNET', 'TESTNET', 'BETA', 'DEVELOPMENT', 'STAGING', 'PRODUCTION']
 
   return (
     <main className="pt-24 pb-20 px-8 max-w-screen-2xl w-full mx-auto space-y-12">
@@ -77,7 +77,7 @@ export default function ProjectsPage({ projects, loading }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredProjects.map((project) => {
           const specs = parseSpecs(project.specs)
-          const isLive = ['MAINNET', 'LIVE'].includes(project.status?.toUpperCase())
+          const isLive = ['MAINNET', 'LIVE', 'PRODUCTION'].includes(project.status?.toUpperCase())
           const isTestnet = project.status?.toUpperCase() === 'TESTNET'
 
           return (
