@@ -11,22 +11,22 @@ export default function AboutPage() {
 
   const experiences = [
     {
-      year: 'Present',
-      role: 'Core Architect',
-      organization: 'KryptoZone Protocol v2.0',
-      description: 'Designing and deploying web3 portfolio platforms, integrating Supabase with secure Postgres schemas, RLS policies, and interactive telemetry nodes.'
+      year: 'PRESENT (2021 - Present)',
+      role: 'Software Development Instructor',
+      organization: 'KusuConsult Engineering Cohorts',
+      description: 'Architecting and delivering full-stack development curriculum focusing on advanced JavaScript ecosystems, React.js, and Next.js integrations. Managing backend systems optimization using Node.js, implementing advanced database security protocols, and overseeing code audits to ensure modular design integrity across core internal projects.'
     },
     {
-      year: 'Former',
-      role: 'Blockchain Technology Instructor',
-      organization: 'Academic & Training Programs',
-      description: 'Instructed students and professionals on blockchain theoretical mechanics, cryptography foundations, consensus protocol design, and decentralized database integrity.'
+      year: 'FORMER (2023 - 2024)',
+      role: 'Blockchain Development Lead',
+      organization: 'KCCA COHORT & Ecosystem Labs',
+      description: 'Engineered and deployed secure smart contracts, successfully integrating Web3 capabilities into high-performance web stacks. Conceptualized and implemented The Obsidian Nexus portfolio infrastructure, utilizing complex state management to process real-time cryptocurrency data streams. Led technical frameworks bridging the gap between artificial intelligence architectures and on-chain telemetry.'
     },
     {
-      year: 'Academic',
-      role: 'B.Sc. Business Management Graduate',
-      organization: 'University Studies',
-      description: 'Analyzed organization architectures, project development lifecycles, and operational risk mitigation — applying business logic to protocol engineering.'
+      year: 'FORMER (2018)',
+      role: 'Systems Security Engineer',
+      organization: 'Cisco Networking Academy Foundations',
+      description: 'Developed a strong architectural foundation in digital defensive infrastructure and threat mitigation. Specialized in cryptography basics, network layer security controls, and risk management frameworks to ensure application data integrity against potential vector vulnerabilities.'
     }
   ]
 
@@ -67,11 +67,19 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Location</span>
-              <span className="text-white font-label">Node-US-East</span>
+              <span className="text-white font-label">Nigeria</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-outline uppercase font-label">Degree</span>
-              <span className="text-white font-label">B.Sc. Biz Mgmt</span>
+              <span className="text-white font-label">B.Sc Business Management</span>
+            </div>
+            <div className="flex justify-between items-center text-xs">
+              <span className="text-outline uppercase font-label">Diploma</span>
+              <span className="text-white font-label">Computer Application</span>
+            </div>
+            <div className="flex justify-between items-center text-xs">
+              <span className="text-outline uppercase font-label">Certificate</span>
+              <span className="text-white font-label">Introduction to Cybersecurity</span>
             </div>
           </div>
         </div>
@@ -85,10 +93,10 @@ export default function AboutPage() {
               <h3 className="font-label text-xs text-primary uppercase tracking-wider font-bold">Mission Statement</h3>
             </div>
             <p className="text-on-surface-variant leading-relaxed">
-              As an elite protocol designer and developer, I specialize in bridging high-level business objectives with raw technical execution. Transitioning from academic instruction to core software design has equipped me with the unique capability to verify, explain, and construct secure distributed systems.
+              My mission is to design scalable, intelligent architectures that seamlessly unite Web2 frameworks, Web3 decentralized protocols, and artificial intelligence. Backed by a background in tech education and business logic, I possess a rare blend of skills required to clearly translate complex requirements into secure, high-performance systems.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              My philosophy centers around absolute transparency, complete database verification through Row Level Security, and rich, user-centric layout presentation.
+              I am committed to absolute data transparency, tight security protocols (including advanced Row Level Security), and clean, intuitive user interfaces that bring high-density data to life.
             </p>
           </div>
 
