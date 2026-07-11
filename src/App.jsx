@@ -114,7 +114,7 @@ function AppContent() {
             <div className="bg-surface-container-low max-w-sm w-full p-8 rounded-xl ghost-border glass-panel space-y-6">
               <div className="text-center space-y-1">
                 <span className="material-symbols-outlined text-4xl text-primary animate-pulse">terminal</span>
-                <h2 className="text-xl font-black font-headline text-white">Admin Gateway</h2>
+                <h2 className="text-xl font-black font-headline dark:text-white text-neutral-900">Admin Gateway</h2>
                 <p className="font-label text-[10px] text-outline uppercase tracking-wider">SECURE LEVEL ACCESS REQUIRED</p>
               </div>
 
@@ -130,7 +130,7 @@ function AppContent() {
                   <input
                     value={adminEmail}
                     onChange={(e) => setAdminEmail(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none"
+                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline text-sm transition-all px-0 py-2 outline-none"
                     placeholder="name@kryptozone.com"
                     type="email"
                     required
@@ -142,7 +142,7 @@ function AppContent() {
                   <input
                     value={adminPassword}
                     onChange={(e) => setAdminPassword(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-white font-headline text-sm transition-all px-0 py-2 outline-none"
+                    className="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 dark:text-white text-neutral-900 font-headline text-sm transition-all px-0 py-2 outline-none"
                     placeholder="••••••••"
                     type="password"
                     required
@@ -161,7 +161,7 @@ function AppContent() {
               <div className="text-center pt-2">
                 <button
                   onClick={() => handleTabChange('home')}
-                  className="text-[10px] font-label text-outline hover:text-white transition-colors cursor-pointer"
+                  className="text-[10px] font-label text-outline hover:dark:text-white text-neutral-900 transition-colors cursor-pointer"
                 >
                   ← Return to Public Terminal
                 </button>
