@@ -200,7 +200,7 @@ function AppContent() {
           {/* Real-time Market Telemetry */}
           <MarketOracle oracleData={oracleData} loading={loading} />
 
-          {/* Chain vs Neural Feeds */}
+          {/* Chain vs Tech Feeds */}
           <IntelAggregator feeds={feeds} loading={loading} />
 
           {/* Recent Portfolio Projects — 4 cards + View All button */}
